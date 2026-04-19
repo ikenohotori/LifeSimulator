@@ -3,22 +3,16 @@ import type { LifeEvent, LifeStateSnapshot } from '../types'
 export const lifeEvents: LifeEvent[] = [
   {
     id: 'park_day',
-    title: { ja: '公園で深呼吸', en: 'Breathe at the park' },
-    description: {
-      ja: '新鮮な空気で心身が落ち着いた。',
-      en: 'Fresh air steadies your body and mind.'
-    },
+    title: { ja: '公園で深呼吸' },
+    description: { ja: '新鮮な空気で心身が落ち着いた。' },
     probability: 1.1,
     stages: ['toddler', 'child', 'senior'],
     effect: { health: 6, happiness: 5 }
   },
   {
     id: 'study_group',
-    title: { ja: '勉強会に参加', en: 'Joined a study group' },
-    description: {
-      ja: '知識が深まり、視野が広がった。',
-      en: 'New ideas sharpened your thinking.'
-    },
+    title: { ja: '勉強会に参加' },
+    description: { ja: '知識が深まり、視野が広がった。' },
     probability: 1.3,
     stages: ['child', 'teen', 'adult'],
     condition: ({ stats }) => stats.intelligence < 95,
@@ -26,22 +20,16 @@ export const lifeEvents: LifeEvent[] = [
   },
   {
     id: 'volunteer',
-    title: { ja: 'ボランティア', en: 'Volunteering' },
-    description: {
-      ja: '誰かを助けることで自分も救われた。',
-      en: 'Helping others grounded your values.'
-    },
+    title: { ja: 'ボランティア' },
+    description: { ja: '誰かを助けることで自分も救われた。' },
     probability: 1.2,
     stages: ['teen', 'adult', 'senior'],
     effect: { morality: 10, happiness: 6 }
   },
   {
     id: 'late_night',
-    title: { ja: '寝不足', en: 'Late night' },
-    description: {
-      ja: '集中が続かず、体力が削られた。',
-      en: 'Fatigue drags you down.'
-    },
+    title: { ja: '寝不足' },
+    description: { ja: '集中が続かず、体力が削られた。' },
     probability: 0.9,
     stages: ['teen', 'adult'],
     condition: ({ stats }) => stats.intelligence > 40,
@@ -49,22 +37,16 @@ export const lifeEvents: LifeEvent[] = [
   },
   {
     id: 'job_offer',
-    title: { ja: '仕事のオファー', en: 'Job offer' },
-    description: {
-      ja: '経験を積むチャンスだが、負荷も増える。',
-      en: 'New role boosts your career but taxes your energy.'
-    },
+    title: { ja: '仕事のオファー' },
+    description: { ja: '経験を積むチャンスだが、負荷も増える。' },
     probability: 1,
     stages: ['adult'],
     effect: { wealth: 14, health: -6, happiness: -4 }
   },
   {
     id: 'mentorship',
-    title: { ja: 'メンターとの出会い', en: 'Mentor arrived' },
-    description: {
-      ja: '道徳と知恵を授かった。',
-      en: 'Wisdom and ethics aligned.'
-    },
+    title: { ja: 'メンターとの出会い' },
+    description: { ja: '道徳と知恵を授かった。' },
     probability: 0.7,
     stages: ['adult', 'senior'],
     condition: ({ inventory, stats }) => inventory.has('book') || stats.intelligence > 65,
@@ -72,22 +54,16 @@ export const lifeEvents: LifeEvent[] = [
   },
   {
     id: 'windfall',
-    title: { ja: '臨時収入', en: 'Windfall' },
-    description: {
-      ja: '思わぬ収入に心が軽くなった。',
-      en: 'An unexpected gain eases your mind.'
-    },
+    title: { ja: '臨時収入' },
+    description: { ja: '思わぬ収入に心が軽くなった。' },
     probability: 0.6,
     stages: ['teen', 'adult', 'senior'],
     effect: { wealth: 16, happiness: 5 }
   },
   {
     id: 'donation',
-    title: { ja: '寄付を決断', en: 'Decided to donate' },
-    description: {
-      ja: '持ち物を手放し、心が軽くなった。',
-      en: 'Giving away something lifted your spirit.'
-    },
+    title: { ja: '寄付を決断' },
+    description: { ja: '持ち物を手放し、心が軽くなった。' },
     probability: 0.9,
     stages: ['adult', 'senior'],
     condition: ({ inventory, stats }) => inventory.has('coin') || stats.wealth > 60,
@@ -95,11 +71,8 @@ export const lifeEvents: LifeEvent[] = [
   },
   {
     id: 'bad_news',
-    title: { ja: '悲報', en: 'Difficult news' },
-    description: {
-      ja: '精神的な負担が大きい。',
-      en: 'The news weighs on you.'
-    },
+    title: { ja: '悲報' },
+    description: { ja: '精神的な負担が大きい。' },
     probability: 0.8,
     stages: ['adult', 'senior'],
     effect: { happiness: -12, morality: -4 }

@@ -25,10 +25,6 @@ export class ResultScene extends Phaser.Scene {
       saveBest(this.summary)
       this.best = this.summary
     }
-    this.game.events.on('language-changed', this.handleLanguageChange, this)
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.game.events.off('language-changed', this.handleLanguageChange, this)
-    })
   }
 
   create(): void {
@@ -84,17 +80,12 @@ export class ResultScene extends Phaser.Scene {
     const stageLabel = stageById[summary.stageId]?.name[this.language] ?? summary.stageId
     const lines = [
       `${t('stageLabel', this.language)}: ${stageLabel}`,
-      `${t('survival', this.language)}: ${summary.survived ? '✓' : t('collapse', this.language)}`,
-      `HP ${summary.stats.health.toFixed(0)} / Joy ${summary.stats.happiness.toFixed(0)}`,
-      `Wealth ${summary.stats.wealth.toFixed(0)} / Int ${summary.stats.intelligence.toFixed(0)} / Mor ${summary.stats.morality.toFixed(0)}`,
+      `${t('survival', this.language)}: ${summary.survived ? '達成' : t('collapse', this.language)}`,
+      `${t('health', this.language)} ${summary.stats.health.toFixed(0)} / ${t('happiness', this.language)} ${summary.stats.happiness.toFixed(0)}`,
+      `${t('wealth', this.language)} ${summary.stats.wealth.toFixed(0)} / ${t('intelligence', this.language)} ${summary.stats.intelligence.toFixed(0)} / ${t('morality', this.language)} ${summary.stats.morality.toFixed(0)}`,
       `${t('eventLog', this.language)}: ${summary.history.events.length}`
     ]
     return lines.join('\n')
-  }
-
-  private handleLanguageChange = (lang: Language): void => {
-    this.language = lang
-    this.scene.restart({ summary: this.summary, language: lang })
   }
 }
 

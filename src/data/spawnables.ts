@@ -4,64 +4,64 @@ export const spawnables: Spawnable[] = [
   {
     id: 'fruit',
     kind: 'item',
-    label: { ja: '果物', en: 'Fruit' },
-    description: { ja: '体力と幸福を少し回復', en: 'Restores a bit of health and joy.' },
+    label: { ja: '果物' },
+    description: { ja: '体力と幸福を少し回復' },
     effect: { health: 8, happiness: 6 },
     color: 0xffd166
   },
   {
     id: 'book',
     kind: 'item',
-    label: { ja: '本', en: 'Book' },
-    description: { ja: '知性と道徳心を養う', en: 'Raises intellect and empathy.' },
+    label: { ja: '本' },
+    description: { ja: '知性と道徳心を養う' },
     effect: { intelligence: 9, morality: 5 },
     color: 0x6ee7b7
   },
   {
     id: 'coin',
     kind: 'item',
-    label: { ja: 'コイン', en: 'Coin' },
-    description: { ja: '資産を増やす', en: 'Adds a bit of wealth.' },
+    label: { ja: 'コイン' },
+    description: { ja: '資産を増やす' },
     effect: { wealth: 10, happiness: 2 },
     color: 0xf9a8d4
   },
   {
     id: 'compass',
     kind: 'item',
-    label: { ja: 'コンパス', en: 'Compass' },
-    description: { ja: '善悪の軸を整える', en: 'Steadies your moral compass.' },
+    label: { ja: 'コンパス' },
+    description: { ja: '善悪の軸を整える' },
     effect: { morality: 8 },
     color: 0x93c5fd
   },
   {
     id: 'friend',
     kind: 'item',
-    label: { ja: '仲間', en: 'Friend' },
-    description: { ja: '幸福感を押し上げる', en: 'Boosts happiness with company.' },
+    label: { ja: '仲間' },
+    description: { ja: '幸福感を押し上げる' },
     effect: { happiness: 12 },
     color: 0x2dd4bf
   },
   {
     id: 'rock',
     kind: 'obstacle',
-    label: { ja: '岩', en: 'Rock' },
-    description: { ja: 'つまずきで体力を失う', en: 'A stumble hurts your health.' },
+    label: { ja: '岩' },
+    description: { ja: 'つまずきで体力を失う' },
     effect: { health: -12, happiness: -4 },
     color: 0x475569
   },
   {
     id: 'stress',
     kind: 'obstacle',
-    label: { ja: 'ストレス', en: 'Stress' },
-    description: { ja: '心をすり減らす', en: 'Burns happiness and morality.' },
+    label: { ja: 'ストレス' },
+    description: { ja: '心をすり減らす' },
     effect: { happiness: -10, morality: -6 },
     color: 0x9b65de
   },
   {
     id: 'debt',
     kind: 'obstacle',
-    label: { ja: '借金', en: 'Debt' },
-    description: { ja: '資産と幸福を奪う', en: 'Drains wealth and joy.' },
+    label: { ja: '借金' },
+    description: { ja: '資産と幸福を奪う' },
     effect: { wealth: -14, happiness: -8, morality: -2 },
     color: 0xd946ef
   }

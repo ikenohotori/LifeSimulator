@@ -1,8 +1,7 @@
-export type Language = 'ja' | 'en'
+export type Language = 'ja'
 
 export type LocaleText = {
   ja: string
-  en: string
 }
 
 export const STAT_KEYS = ['health', 'happiness', 'wealth', 'intelligence', 'morality'] as const

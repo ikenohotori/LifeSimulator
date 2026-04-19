@@ -76,11 +76,6 @@ export class GameScene extends Phaser.Scene {
       callback: this.handleLifeEvent,
       callbackScope: this
     })
-
-    this.game.events.on('language-changed', this.handleLanguageChange, this)
-    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.game.events.off('language-changed', this.handleLanguageChange, this)
-    })
   }
 
   update(_time: number, delta: number): void {
@@ -251,12 +246,6 @@ export class GameScene extends Phaser.Scene {
   private finishRun = (): void => {
     this.scene.stop('game')
     this.scene.start('result', { summary: this.life.toSummary(), language: this.language })
-  }
-
-  private handleLanguageChange = (lang: Language): void => {
-    this.language = lang
-    this.refreshStageUI()
-    this.hud.updateStats(this.life.stats)
   }
 }
 

@@ -55,7 +55,7 @@ export class Hud {
   }
 
   updateTimer(elapsed: number): void {
-    this.timerText.setText(`${t('timeLabel', this.language)} ${elapsed.toFixed(1)}s`)
+    this.timerText.setText(`${t('timeLabel', this.language)} ${elapsed.toFixed(1)}秒`)
   }
 
   updateStats(stats: LifeStats): void {
